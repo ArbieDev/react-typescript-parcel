@@ -5,10 +5,10 @@ class App extends React.Component<any, any> {
     super(props);
     this.state = {
       input: ''
-    }
+    };
   }
 
-  showCurrentInput(input) {
+  showCurrentInput(input: string) {
     this.setState({ input });
   }
 
@@ -17,7 +17,10 @@ class App extends React.Component<any, any> {
       <div>
         <i>IT WORKS!</i>
         <div>
-          <input type="text" onChange={(e) => this.showCurrentInput(e.target.value)} />
+          <input
+            type="text"
+            onChange={e => this.showCurrentInput(e.target.value)}
+          />
         </div>
         <div className="f24 blue">{this.state.input}</div>
       </div>
